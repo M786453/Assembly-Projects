@@ -12,17 +12,13 @@ Include Irvine32.inc
 .code
 main PROC
 
-	mov eax, var[0]
+	mov eax, var[0]		; copy first element of array to eax
 
-	xchg eax, var[8]
+	xchg eax, var[4]	; exchagne values of eax and array's second element
 
-	mov var[0], eax
-	
-	mov eax, var[4]
+	xchg eax, var[8]	; exchange values of eax and array's third element
 
-	xchg eax, var[8]
-
-	mov var[4], eax
+	mov var[0], eax		; mov value of eax to into first position of array
 
 	mov eax, var[0]		; store first element of rearranged array in eax in order to print it
 
