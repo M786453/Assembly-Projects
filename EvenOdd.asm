@@ -4,43 +4,34 @@ Include Irvine32.inc
 ;Created: 29Dec,2021
 ;Description: CHECKING WETHER A NUMBER IS ODD OR EVEN
 
-
 .data
 
-	odd_str BYTE "ODD NUMBER",0
-
-	
-
-	even_str BYTE "EVEN NUMBER",0
+	ev BYTE "THE NUMBER IS EVEN",0
+	od BYTE "THE NUMBER IS ODD",0
 
 .code
 main PROC
 
-	mov eax, 8h
+		mov eax, 6
 
-	AND eax, 1h
+		AND eax, 01H
 
-	JZ evnn
+		mov edx, OFFSET ev
 
-	mov edx, offset odd_str
+		JZ outprog
 
-	call writestring
-
-	jmp outprog
-	
+		mov edx, OFFSET od
 
 
-	evnn:
-		mov edx, offset even_str
-		call writestring
-		
+		outprog:
 
+			call writestring
 
-	outprog:
-		exit
+			exit
 
-
-		
-	
 main endp
+
+
+
+
 end main
